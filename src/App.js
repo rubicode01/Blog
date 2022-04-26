@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { ContentfulClientApi } from "contentful";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>The 4th Blog</h1>
+  
+  const contentful = require("contentful");
 
+  const client = contentful.createClient({
+    space: process.env.REACT_APP_SPACE_ID,
+    environment: "master", // defaults to 'master' if not set
+    accessToken: process.env.REACT_APP_ACCESS_TOKEN,
+  });
 
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
-    </div>
-  );
+  client
+    .getEntries()
+    .then((response) => console.log(response.items))
+    .catch(console.error);
+
+  return <div className="App"></div>;
+
 }
 
 export default App;
