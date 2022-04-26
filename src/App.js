@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { ContentfulClientApi } from "contentful";
+import Router from "./components/Router";
 
 function App() {
   const contentful = require("contentful");
@@ -16,7 +17,11 @@ function App() {
     .then((response) => console.log(response.items))
     .catch(console.error);
 
-  return <div className="App"></div>;
+  return (
+  <div className="App">
+    
+    <Router />
+  </div>);
 }
 
 export default App;
