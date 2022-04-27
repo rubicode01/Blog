@@ -43,7 +43,19 @@ font-size: 0.6rem;
   color: #61dafb;
 }
 
+.big-card
+{
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  text-align: left;
 
+}
+.big-card-img
+{
+  width: 70%;
+}
 
 @keyframes App-logo-spin {
   from {

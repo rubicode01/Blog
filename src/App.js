@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { ContentfulClientApi } from "contentful";
 import Router from "./components/Router";
 import NavBar from './components/NavBar';
+import BigCard from './components/BigCard';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
   return (
   <div className="App">
     <NavBar/>
+    <BigCard />
  
   {posts ? 
     <Router posts={posts} /> :
