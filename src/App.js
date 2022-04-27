@@ -4,8 +4,10 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { ContentfulClientApi } from "contentful";
 import Router from "./components/Router";
+import NavBar from './components/NavBar';
 
 function App() {
+
 
   const [posts, setPosts] = useState([]);
 
@@ -30,8 +32,11 @@ function App() {
 
   },[])
 
+
   return (
   <div className="App">
+    <NavBar/>
+ 
   {posts ? 
     <Router posts={posts} /> :
     <h2>Loading...</h2>
