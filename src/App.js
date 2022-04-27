@@ -1,9 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState, useEffect } from "react";
 import { ContentfulClientApi } from "contentful";
 import Router from "./components/Router";
 
 function App() {
+
+  const [posts, setPosts] = useState([]);
+
+  //Contentful
   const contentful = require("contentful");
 
   const client = contentful.createClient({
@@ -12,15 +17,25 @@ function App() {
     accessToken: process.env.REACT_APP_ACCESS_TOKEN,
   });
 
-  client
-    .getEntries()
-    .then((response) => console.log(response.items))
-    .catch(console.error);
+  useEffect(() => {
+      client
+        .getEntries()
+        .then((response) => {
+          setPosts(response.items);
+          
+        })
+        
+        .catch(console.error);
+
+  },[])
 
   return (
   <div className="App">
-    
-    <Router />
+  {posts ? 
+    <Router posts={posts} /> :
+    <h2>Loading...</h2>
+  
+  }
   </div>);
 }
 
