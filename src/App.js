@@ -37,7 +37,6 @@ function App() {
   return (
   <div className="App">
     <NavBar/>
-    <BigCard />
  
   {posts ? 
     <Router posts={posts} /> :

@@ -1,25 +1,21 @@
-import React from 'react'
+import React from "react";
+import BigCard from "./BigCard";
 
-function Home({posts}) {
+function Home({ posts }) {
+  console.log(posts);
   return (
     <>
-        {
-        
+      {
         //console.log(posts)
         posts.map((post) => (
-            <>  
-              <h3>{post.fields.title}</h3>
-              <p className='details'>{post.fields.author}</p>
-              <p className='details'>{post.fields.date}</p>
-              <p>{post.fields.content}</p>
-              <img src={post.fields.picture.fields.file.url}/>
-            </>
-
+          <>
+            <BigCard key={post.sys.id} post={post}/>
+          </>
         ))
-        //Post ID: post.fields.sys.id
-        }
+        //Post ID: post.sys.id
+      }
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

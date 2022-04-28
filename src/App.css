@@ -12,6 +12,9 @@ h3{
   font-weight: 800;
   font-size: 1.5rem;
 }
+p {
+  font-size: 1.2vw;
+}
 
 .details {
 font-size: 0.6rem;
@@ -45,16 +48,24 @@ font-size: 0.6rem;
 
 .big-card
 {
-  flex-direction: row;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3rem;
-  text-align: left;
+  border: 2px solid lightslategray;
+  border-radius: .5rem;
 
+  width: 80%;
+  padding: 0;
 }
 .big-card-img
 {
-  width: 70%;
+  border-radius: .5rem;
+}
+
+.big-card-body {
+  padding-top: 2rem;
+  padding-left: 1rem;
+  text-align: left;
+}
+.big-card-button {
+  margin-bottom: 1rem;
 }
 
 @keyframes App-logo-spin {
