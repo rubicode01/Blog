@@ -7,6 +7,7 @@ import { ContentfulClientApi } from "contentful";
 import BigCard from "./components/BigCard"
 import NavBar from "./components/NavBar";
 import Post from "./components/Post";
+import Home from "./components/Home";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -34,17 +35,10 @@ function App() {
     <div className="App">
       <NavBar />
 
-      {posts ? (
-        <>
-          {posts.map((post) => (
-            <BigCard key={post.sys.id} post={post}/>
-          ))}
-        </>
-      ) : (
-        <h2>Loading...</h2>
-      )}
+
       <Routes>
-        <Route path=":id" element={<Post posts={posts}/>}></Route>
+        <Route path="/" element={<Home posts={posts}/>}/>
+        <Route path="post/:id" element={<Post />}></Route>
       </Routes>
     </div>
   );
