@@ -4,14 +4,9 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ContentfulClientApi } from "contentful";
-<<<<<<< HEAD
-import Router from "./components/Router";
-import NavBar from './components/NavBar';
-import BigCard from './components/BigCard';
-=======
+import BigCard from "./components/BigCard"
 import NavBar from "./components/NavBar";
 import Post from "./components/Post";
->>>>>>> 1916b07a83e04d8887c0ed139b24051293bf6a0d
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -42,20 +37,14 @@ function App() {
       {posts ? (
         <>
           {posts.map((post) => (
-            <>
-              <h3>{post.fields.title}</h3>
-              <p className="details">{post.fields.author}</p>
-              <p className="details">{post.fields.date}</p>
-              <p>{post.fields.content}</p>
-              <img src={post.fields.picture.fields.file.url} />
-            </> //Post ID: post.fields.sys.id
+            <BigCard key={post.sys.id} post={post}/>
           ))}
         </>
       ) : (
         <h2>Loading...</h2>
       )}
       <Routes>
-        <Route path="post/:id" element={<Post />}></Route>
+        <Route path=":id" element={<Post posts={posts}/>}></Route>
       </Routes>
     </div>
   );
