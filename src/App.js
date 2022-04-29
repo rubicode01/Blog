@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { ContentfulClientApi } from "contentful";
 import NavBar from "./components/NavBar";
 import Post from "./components/Post";
+import Home from "./components/Home";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -33,22 +34,8 @@ function App() {
     <div className="App">
       <NavBar />
 
-      {posts ? (
-        <>
-          {posts.map((post) => (
-            <>
-              <h3>{post.fields.title}</h3>
-              <p className="details">{post.fields.author}</p>
-              <p className="details">{post.fields.date}</p>
-              <p>{post.fields.content}</p>
-              <img src={post.fields.picture.fields.file.url} />
-            </> //Post ID: post.fields.sys.id
-          ))}
-        </>
-      ) : (
-        <h2>Loading...</h2>
-      )}
       <Routes>
+        <Route path="/" element={<Home posts={posts}/>}/>
         <Route path="post/:id" element={<Post />}></Route>
       </Routes>
     </div>
