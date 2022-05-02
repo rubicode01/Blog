@@ -17,15 +17,14 @@ console.log(post)
 
 
     <Card style={{ width: '18rem' }}>
-  <Image variant="top" src="https://picsum.photos/seed/picsum/200/150" />
+  <Image variant="top" src={post.fields.picture.fields.file.url} />
   <Card.Body>
     <Card.Title>{post.fields.title}</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
     <Button variant="secondary" to="#">Read more about</Button>
   </Card.Body>
+  <Card.Footer>
+      <small className="text-muted">{post.fields.date}</small>
+    </Card.Footer>
 </Card>
 </Container>
   )

@@ -6,6 +6,9 @@ import { useState, useEffect } from "react";
 import { ContentfulClientApi } from "contentful";
 import NavBar from "./components/NavBar";
 import Post from "./components/Post";
+import SmallCard from "./components/SmallCard";
+import Container from 'react-bootstrap/Container'
+import { CardGroup } from "react-bootstrap";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -32,17 +35,20 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      
 
       {posts ? (
         <>
+
           {posts.map((post) => (
             <>
-              <h3>{post.fields.title}</h3>
+            <SmallCard key={post.sys.id} post={post} />
+              {/* <h3>{post.fields.title}</h3>
               <p className="details">{post.fields.author}</p>
               <p className="details">{post.fields.date}</p>
               <p>{post.fields.content}</p>
-              <img src={post.fields.picture.fields.file.url} />
-            </> //Post ID: post.fields.sys.id
+              <img src={post.fields.picture.fields.file.url} /> */}
+            </> //Post ID: post.sys.id
           ))}
         </>
       ) : (
