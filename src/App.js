@@ -4,6 +4,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ContentfulClientApi } from "contentful";
+import BigCard from "./components/BigCard"
 import NavBar from "./components/NavBar";
 import Post from "./components/Post";
 import Home from "./components/Home";
@@ -34,9 +35,10 @@ function App() {
     <div className="App">
       <NavBar />
 
+
       <Routes>
         <Route path="/" element={<Home posts={posts}/>}/>
-        <Route path="post/:id" element={<Post />}></Route>
+        <Route path="/:id" element={<Post posts={posts}/>}></Route>
       </Routes>
     </div>
   );
