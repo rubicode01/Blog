@@ -5,10 +5,12 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Post({posts}) {
   console.log(posts)
-  const post = posts[0]
+  const {id} = useParams();
+  const post = posts.find(post => id === post.sys.id)
   return (
     <Container fluid className="big-card">
     <Row>
