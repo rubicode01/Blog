@@ -29,7 +29,7 @@ function Home({ posts }) {
             {smallPosts.map((post) => (
               <Col>
               <p>SmallCard</p> {/*SmallCard here*/}
-              <BigCard post={post} />
+              <BigCard key={post.sys.id} post={post} />
               </Col>
             ))}
           </Row>

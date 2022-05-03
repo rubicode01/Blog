@@ -7,12 +7,14 @@ import { Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function BigCard({post}) {
-  const sampleTextCount = 20;
+  const previewLength = 45;
   const text = post.fields.content.split(" ");
-  const sampleText = "";
-  for(let i = 0; i < sampleTextCount; i ++)
+  let previewText = "";
+  for(let i = 0; i < previewLength; i ++)
   {
-    sampleText.concat(text[i]);
+    previewText = previewText + " " + text[i];
+    console.log("preview: " + previewText);
+
   }
   console.log(text);
   return (
@@ -26,7 +28,7 @@ function BigCard({post}) {
         </Col>
         <Col lg className="big-card-body">
           <h3>{post.fields.title}</h3>
-        <p>{sampleText}</p>
+        <p>{previewText}...</p> 
             <Link to={post.sys.id}><Button variant="outline-primary" className="big-card-button">Zum Artikel</Button></Link>
         </Col>
       </Row>
