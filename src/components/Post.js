@@ -1,5 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import {Row, Container, Col} from 'react-bootstrap'
+
 
 function Post({ posts }) {
   //console.log(posts);
@@ -8,22 +10,29 @@ function Post({ posts }) {
   console.log(post)
   const pictureUrl = post.fields.picture.fields.file.url;
   const date = post.fields.date;
+  console.log(date);
 
-  /*const getDateFormat = (date) =>{
-    let days = date.getDate();
-    let months = date.getMonth();
-    let years = date.getFullYear();
-    let dateFormat = days + ":" + months + ":" + years;
-    return dateFormat;
-  }
-*/
+const getDateFormat = (articleDate) =>{
+  const myDateArray = articleDate.slice(0, 10);
+  const newDateFormat = myDateArray.split("-").reverse().join("-");
+  return newDateFormat;
+}
+
+console.log(getDateFormat(date));
+
   return (
     <div>
       <h1>{post.fields.title}</h1>
-      <p><h5>{post.fields.author} : </h5><h6>{date}</h6></p>
+      <Container>
+      <Row>
+        <Col>
+      <b>{post.fields.author}</b>: {getDateFormat(date)}
+      </Col>
+      </Row>
+      </Container>
       <div>
         <img
-          fluid
+          
           src={pictureUrl} alt={post.fields.title}
 
         />
