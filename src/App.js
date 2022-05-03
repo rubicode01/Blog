@@ -7,7 +7,11 @@ import { ContentfulClientApi } from "contentful";
 import BigCard from "./components/BigCard"
 import NavBar from "./components/NavBar";
 import Post from "./components/Post";
+import SmallCard from "./components/SmallCard";
+import Container from 'react-bootstrap/Container'
+import { CardGroup } from "react-bootstrap";
 import Home from "./components/Home";
+
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -34,8 +38,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-
-
+    
       <Routes>
         <Route path="/" element={<Home posts={posts}/>}/>
         <Route path="/:id" element={<Post posts={posts}/>}></Route>
