@@ -10,7 +10,7 @@ function Post({ posts }) {
       <div>
         <img
           fluid
-          src="https://www2.tuhh.de/zll/wp-content/uploads/placeholder.png"
+          src={post.fields.picture.fields.file.url}
         />
       </div>
       <div>
