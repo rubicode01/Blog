@@ -38,27 +38,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      
-
-
-      {posts ? (
-        <>
-
-          {posts.map((post) => (
-            <>
-            <SmallCard key={post.sys.id} post={post} />
-              {/* <h3>{post.fields.title}</h3>
-              <p className="details">{post.fields.author}</p>
-              <p className="details">{post.fields.date}</p>
-              <p>{post.fields.content}</p>
-              <img src={post.fields.picture.fields.file.url} /> */}
-            </> //Post ID: post.sys.id
-          ))}
-        </>
-      ) : (
-        <h2>Loading...</h2>
-      )}
-
+    
       <Routes>
         <Route path="/" element={<Home posts={posts}/>}/>
         <Route path="/:id" element={<Post posts={posts}/>}></Route>

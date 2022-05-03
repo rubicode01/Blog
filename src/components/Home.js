@@ -2,6 +2,7 @@ import React from "react";
 import BigCard from "./BigCard";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import SmallCard from "./SmallCard";
 
 function Home({ posts }) {
   //get newest Post(for BigCard) and remove it from posts
@@ -25,11 +26,10 @@ function Home({ posts }) {
               <BigCard post={newPost} /> {/*BigCard here*/}
             </Col>
           </Row>
-          <Row>
+          <Row style={{ justifyContent: "space-between" }}>
             {smallPosts.map((post) => (
               <Col>
-              <p>SmallCard</p> {/*SmallCard here*/}
-              <BigCard post={post} />
+              <SmallCard key={post.sys.id} post={post}/> {/*SmallCard here*/}
               </Col>
             ))}
           </Row>

@@ -17,7 +17,7 @@ function Post({posts}) {
       <Col lg>
       <Image fluid
         className="big-card-img"
-        src="https://www2.tuhh.de/zll/wp-content/uploads/placeholder.png"
+        src={post.fields.picture.fields.file.url}
       />
       </Col>
       <Col lg className="big-card-body">

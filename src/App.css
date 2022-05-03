@@ -15,6 +15,9 @@ h3{
 p {
   font-size: 1.2vw;
 }
+.images{
+  background-image: cover !important;
+}
 
 .details {
 font-size: 0.6rem;
@@ -49,15 +52,19 @@ font-size: 0.6rem;
 .big-card
 {
   border: 2px solid lightslategray;
-  border-radius: .5rem;
-
-  width: 80%;
+  /* border-radius: .5rem; */
   padding: 0;
 }
-.big-card-img
+/* .big-card-img
 {
   border-radius: .5rem;
+} */
+
+
+.newrow{
+  display: flex !important;
 }
+
 
 .big-card-body {
   padding-top: 2rem;
@@ -75,4 +82,15 @@ font-size: 0.6rem;
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.cardStyle-BIG-pic{
+  width: 100%;
+  height: auto;
+}
+
+.cardStyle-BIG-body {
+  width: 100%;
+  height: auto;
 }
