@@ -1,36 +1,57 @@
 import React from "react";
-import bootstrap from "bootstrap";
+
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Card from 'react-bootstrap/Card'
 
 function BigCard({post}) {
-  const sampleTextCount = 20;
+  const previewLength = 45;
   const text = post.fields.content.split(" ");
-  const sampleText = "";
-  for(let i = 0; i < sampleTextCount; i ++)
+  let previewText = "";
+  for(let i = 0; i < previewLength; i ++)
   {
-    sampleText.concat(text[i]);
+    previewText = previewText + " " + text[i];
+    console.log("preview: " + previewText);
+
   }
   console.log(text);
   return (
-    <Container fluid className="big-card">
-      <Row>
-        <Col lg>
-        <Image fluid
-          className="big-card-img"
-          src="https://www2.tuhh.de/zll/wp-content/uploads/placeholder.png"
+
+    <>
+
+  
+{/* <Card style={{ marginTop:"1rem", marginLeft:"auto", alignItems:'start' }}>
+<Image className="cardStyle-BIG-pic" src={post.fields.picture.fields.file.url} />
+        <Card.Body className="cardStyle-BIG-body">
+          <Card.Title>{post.fields.title}</Card.Title>
+          <Card.Text>{sampleText}</Card.Text>
+          <Link to={post.sys.id}>
+            <Button variant="secondary">Zum Artikel</Button>
+            </Link>
+        </Card.Body>
+      </Card> */}
+
+
+     
+      <Card  style={{ marginTop:"1rem", marginLeft:"auto" }}>
+      <Row xs={1} md={2} className="g-4" >
+        <Col >
+        <Image fluid src={post.fields.picture.fields.file.url}npms
         />
         </Col>
-        <Col lg className="big-card-body">
+        
+        <Col className="big-card-body">
           <h3>{post.fields.title}</h3>
-        <p>{sampleText}</p>
-            <Link to={post.sys.id}><Button variant="outline-primary" className="big-card-button">Zum Artikel</Button></Link>
+
+        <p>{previewText}</p>
+            <Link to={post.sys.id}><Button variant="secondary">Zum Artikel</Button></Link>
         </Col>
       </Row>
-    </Container>
+      </Card>
+    </>
   );
 }
 

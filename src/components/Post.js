@@ -25,6 +25,7 @@ function Post({ posts }) {
         <img
           fluid
           src={pictureUrl} alt={post.fields.title}
+
         />
       </div>
       <div>
