@@ -23,6 +23,8 @@ h3{
 }
 p {
   font-size: 1.2vw;
+  overflow-wrap: break-word;
+
 }
 .images{
   background-image: cover !important;
@@ -74,6 +76,8 @@ font-size: 0.6rem;
 .big-card
 {
   border: 2px solid lightslategray;
+  border-radius: .5rem;
+  width: 80%;
   /* border-radius: .5rem; */
   padding: 0;
 }
@@ -94,7 +98,9 @@ font-size: 0.6rem;
 .big-card-body {
   padding-top: 2rem;
   padding-left: 1rem;
+  padding-right: 1rem;
   text-align: left;
+  overflow-wrap: break-word;
 }
 .big-card-button {
   margin-bottom: 1rem;
