@@ -1,8 +1,13 @@
 import React from 'react'
+import { NavLink } from 'react-bootstrap'
+
 
 const NavBar = () => {
   return (
-    <h1>Blocks 4 Groups</h1>
+    <div className="navBG">
+    <h1 >Blocks 4 Groups</h1>
+  
+    </div>
   )
 }
 

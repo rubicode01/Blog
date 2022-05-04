@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
 import {Row} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 
 function SmallCard ({post}) {
@@ -16,18 +17,20 @@ function SmallCard ({post}) {
 <>
 
 
-
-    <Card style={{marginTop:"1rem",marginLeft:"auto", marginRight:"auto" }}>
-  <Image style={{height:'10rem', width:'auto', resizeMode:'cover'}} src={post.fields.picture.fields.file.url} />
-  <Card.Body >
+    <Card style={{marginTop:"1rem",marginLeft:"auto", marginRight:"auto"}}>
+  <Image style={{height:'10rem',  resizeMode:'resize'}} src={post.fields.picture.fields.file.url} />
+  <Card.Body style={{height:'5rem'}} >
     <Card.Title>{post.fields.title}</Card.Title>
-    <Button variant="secondary" to="#">Read more about</Button>
-  </Card.Body>
+   
+  </Card.Body >
+  <Card.Footer className='linkcard'>
+  <Link to={post.sys.id}><Button className="btn-card" variant="secondary" size="sm"  >Read more about</Button></Link>
+  </Card.Footer>
   <Card.Footer>
-      <small >{post.fields.date}</small>
+     
+      <small className="text-muted" >{post.fields.date}</small>
     </Card.Footer>
 </Card>
-
 </>
   )
   }

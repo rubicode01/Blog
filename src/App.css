@@ -6,7 +6,16 @@
 h1{
   font-weight: 800;
   text-transform: uppercase;
+  padding: 1rem;
+  color: white;
 }
+
+
+.btn-card{
+  background-color: slategrey ;
+  border: none;
+}
+
 
 h3{
   font-weight: 800;
@@ -51,6 +60,19 @@ font-size: 0.6rem;
   color: #61dafb;
 }
 
+.footerdate{
+  background-color: slategrey ;
+}
+
+.navBG{
+  background-color:slategrey;
+}
+
+.linkcard {
+  background-color: transparent;
+  border-style: none;
+}
+
 .big-card
 {
   border: 2px solid lightslategray;
@@ -69,6 +91,9 @@ font-size: 0.6rem;
   display: flex !important;
 }
 
+.datum{
+  font-size: x-small;
+}
 
 .big-card-body {
   padding-top: 2rem;

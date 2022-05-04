@@ -39,7 +39,7 @@ function BigCard({post}) {
       <Card  style={{ marginTop:"1rem", marginLeft:"auto" }}>
       <Row xs={1} md={2} className="g-4" >
         <Col >
-        <Image fluid src={post.fields.picture.fields.file.url}npms
+        <Image fluid src={post.fields.picture.fields.file.url}
         />
         </Col>
         
@@ -48,6 +48,7 @@ function BigCard({post}) {
 
         <p>{previewText}</p>
             <Link to={post.sys.id}><Button variant="secondary">Zum Artikel</Button></Link>
+
         </Col>
       </Row>
       </Card>
