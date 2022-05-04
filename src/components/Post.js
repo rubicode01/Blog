@@ -23,41 +23,41 @@ function Post({ posts }) {
   /*Slice the Content in two parts*/
   const sliceContent = (content) => {
     const firstPartOfContent = content.slice(0, content.length / 2);
-    const secondPartOfContent = content.slice(firstPartOfContent);
+    const secondPartOfContent = content.slice(firstPartOfContent.length);
     return [firstPartOfContent, secondPartOfContent];
   };
 
   return (
     <div>
-      <h2>{post.fields.title}</h2>
-      <Container>
-        <Row>
+      
+      <Container className="postBox">
+      
+        <Row className="rowdesign">
           <Col>
-            <b>{post.fields.author}</b>: {getDateFormat(date)}
+          <h2>{post.fields.title}</h2>
+            <p className="info">{post.fields.author}</p> 
+            <p className="info">{getDateFormat(date)}</p>
           </Col>
         </Row>
-      </Container>
-
-      <Container>
-        <Row style={{justifyContent : "center"}}>
+    
+        <Row >
           <Col xs={12} md={12}>
             <Image
               align="start"
               src={pictureUrl}
               alt={post.fields.title}
               rounded
- className="img-fluid shadow rounded my-5"
+ className="img-fluid"
               responsive
             />
           </Col>
         </Row>
-        <Row>
+        <Row className="rowdesign">
           <Col xs={12} lg={6}>
-          <p style={{textAlign: "justify"}}>{sliceContent(content)[0]}</p>
+          <p className="text" style={{textAlign: "justify"}}>{sliceContent(content)[0]}</p>
           </Col>
-       
         <Col>
-          <p style={{textAlign: "justify"}}>{sliceContent(content)[1]}</p>
+          <p className="text" style={{textAlign: "justify"}}>{sliceContent(content)[1]}</p>
           </Col>
           </Row>
       </Container>

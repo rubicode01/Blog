@@ -7,6 +7,15 @@ import {Row} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
+/*Get the whished date format DD-MM-YYYY*/
+const getDateFormat = (articleDate) => {
+  const myDateArray = articleDate.slice(0, 10);
+  const newDateFormat = myDateArray.split("-").reverse().join("-");
+  return newDateFormat;
+};
+
+
+
 function SmallCard ({post}) {
 // console.log(post)
   
@@ -17,18 +26,18 @@ function SmallCard ({post}) {
 <>
 
 
-    <Card style={{marginTop:"1rem",marginLeft:"auto", marginRight:"auto"}}>
+    <Card className="carddesign" >
   <Image style={{height:'10rem',  resizeMode:'resize'}} className="image" src={post.fields.picture.fields.file.url} />
   <Card.Body style={{height:'5rem'}} >
-    <Card.Title>{post.fields.title}</Card.Title>
+    <Card.Title><h4>{post.fields.title}</h4></Card.Title>
    
   </Card.Body >
   <Card.Footer className='linkcard'>
   <Link to={post.sys.id}><Button className="btn-card" variant="secondary" size="sm"  >Read more</Button></Link>
   </Card.Footer>
-  <Card.Footer>
+  <Card.Footer className='linkcard'>
      
-      <small className="text-muted" >{post.fields.date}</small>
+      <small className="info" >{getDateFormat(post.fields.date)}</small>
     </Card.Footer>
 </Card>
 </>
