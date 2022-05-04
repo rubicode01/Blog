@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  background-color: #eaecec;
 }
 
 h1  {
@@ -11,15 +12,55 @@ h1  {
 
 }
 
+h2{
+  font-weight: 800;
+  font-size:xx-large;
+  text-transform: uppercase;
+  color:rgb(40, 40, 40);
+}
+
+h4{
+  font-size: medium;
+  
+}
+
+.text{
+  font-size:small;
+}
+
+
+.info{
+  font-size: x-small;
+  color: #2d6466;
+  text-align: right;
+}
+
+
 a{
 text-decoration: none;
 }
 
 .btn-card{
-  background-color: slategrey ;
+  background-color: #2d6466 ;
   border: none;
+  float: left;
 }
 
+.carddesign{
+  border-radius: 0 !important;
+  border: none;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.postBox{
+  background-color: white;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
 
 h3{
   font-weight: 800;
@@ -69,18 +110,18 @@ font-size: 0.6rem;
 }
 
 .navBG{
-  background-color:slategrey;
+  background-color:#2d6466;
 }
 
 .linkcard {
   background-color: transparent;
-  border-style: none;
+  border: 0 !important;
 }
 
 .big-card
 {
   border: 2px solid lightslategray;
-  border-radius: .5rem;
+  /* border-radius: .5rem; */
   width: 80%;
   /* border-radius: .5rem; */
   padding: 0;
@@ -139,5 +180,8 @@ font-size: 0.6rem;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
+}
 
+.rowdesign{
+  padding-top: 1rem;
 }
