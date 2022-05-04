@@ -26,7 +26,7 @@ function Home({ posts }) {
               <BigCard post={newPost} /> {/*BigCard here*/}
             </Col>
           </Row>
-          <Row style={{ justifyContent: "space-between" }}>
+          <Row xs={1} s={2} md={3} style={{ justifyContent: "space-between" }}>
             {smallPosts.map((post) => (
               <Col>
               <SmallCard key={post.sys.id} post={post}/> {/*SmallCard here*/}

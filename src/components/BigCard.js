@@ -37,14 +37,14 @@ function BigCard({post}) {
       <Card  style={{ marginTop:"1rem", marginLeft:"auto" }}>
       <Row xs={1} md={2} className="g-4" >
         <Col >
-        <Image fluid src={post.fields.picture.fields.file.url}npms
+        <Image fluid src={post.fields.picture.fields.file.url}
         />
         </Col>
         
         <Col className="big-card-body">
           <h3>{post.fields.title}</h3>
         <p>{sampleText}</p>
-            <Link to={post.sys.id}><Button variant="secondary">Zum Artikel</Button></Link>
+            <Link to={post.sys.id}><Button className="btn-card" size="sm" variant="secondary">Zum Artikel</Button></Link>
         </Col>
       </Row>
       </Card>
