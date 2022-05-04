@@ -24,7 +24,7 @@ function SmallCard ({post}) {
    
   </Card.Body >
   <Card.Footer className='linkcard'>
-  <Link to={post.sys.id}><Button className="btn-card" variant="secondary" size="sm"  >Read more about</Button></Link>
+  <Link to={post.sys.id}><Button className="btn-card" variant="secondary" size="sm"  >Read more</Button></Link>
   </Card.Footer>
   <Card.Footer>
      

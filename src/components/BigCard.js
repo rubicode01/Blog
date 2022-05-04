@@ -47,7 +47,7 @@ function BigCard({post}) {
           <h3>{post.fields.title}</h3>
 
         <p>{previewText}</p>
-            <Link to={post.sys.id}><Button variant="secondary">Zum Artikel</Button></Link>
+            <Link to={post.sys.id}><Button variant="secondary" size="sm" >Read more</Button></Link>
 
         </Col>
       </Row>
