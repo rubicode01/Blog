@@ -1,11 +1,11 @@
 import React from 'react'
-import { NavLink } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 
 const NavBar = () => {
   return (
     <div className="navBG">
-    <h1 >Blocks 4 Groups</h1>
+    <Link to="/"><h1 >Blocks 4 Groups</h1></Link>
   
     </div>
   )
