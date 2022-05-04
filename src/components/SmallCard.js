@@ -18,7 +18,7 @@ function SmallCard ({post}) {
 
 
     <Card style={{marginTop:"1rem",marginLeft:"auto", marginRight:"auto"}}>
-  <Image style={{height:'10rem',  resizeMode:'resize'}} src={post.fields.picture.fields.file.url} />
+  <Image style={{height:'10rem',  resizeMode:'resize'}} className="image" src={post.fields.picture.fields.file.url} />
   <Card.Body style={{height:'5rem'}} >
     <Card.Title>{post.fields.title}</Card.Title>
    

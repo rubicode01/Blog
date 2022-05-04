@@ -3,13 +3,17 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-h1{
+h1  {
   font-weight: 800;
   text-transform: uppercase;
   padding: 1rem;
   color: white;
+
 }
 
+a{
+text-decoration: none;
+}
 
 .btn-card{
   background-color: slategrey ;
@@ -96,7 +100,7 @@ font-size: 0.6rem;
 }
 
 .big-card-body {
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
   text-align: left;
@@ -124,4 +128,16 @@ font-size: 0.6rem;
 .cardStyle-BIG-body {
   width: 100%;
   height: auto;
+}
+
+.image{
+  object-fit: cover;
+  /* margin: auto; */
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+
 }

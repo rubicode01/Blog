@@ -29,7 +29,7 @@ function Post({ posts }) {
 
   return (
     <div>
-      <h1>{post.fields.title}</h1>
+      <h2>{post.fields.title}</h2>
       <Container>
         <Row>
           <Col>
@@ -40,13 +40,13 @@ function Post({ posts }) {
 
       <Container>
         <Row style={{justifyContent : "center"}}>
-          <Col xs={6} md={12}>
+          <Col xs={12} md={12}>
             <Image
               align="start"
               src={pictureUrl}
               alt={post.fields.title}
               rounded
-              className="img-fluid shadow rounded my-5"
+ className="img-fluid shadow rounded my-5"
               responsive
             />
           </Col>
