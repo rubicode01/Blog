@@ -28,7 +28,7 @@ function BigCard({ post }) {
 
             <p className="text">{previewText}</p>
             <Link to={post.sys.id}>
-              <Button variant="secondary" className="btn-card" size="sm">
+              <Button variant="secondary" className="btn-card btn-big-card" size="sm">
                 Read more
               </Button>
             </Link>
