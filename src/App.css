@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  background-color: #eaecec;
+  background-color: #dedede;
 }
 
 h1  {
@@ -21,6 +21,7 @@ h2{
 
 h4{
   font-size: medium;
+  font-weight: bolder;
   
 }
 
@@ -31,8 +32,10 @@ h4{
 
 .info{
   font-size: x-small;
-  color: #2d6466;
-  text-align: right;
+  color: #06494b;
+  text-align: center;
+  margin-top: 1rem;
+  text-transform: uppercase;
 }
 
 
@@ -41,25 +44,38 @@ text-decoration: none;
 }
 
 .btn-card{
-  background-color: #2d6466 ;
+  background-color: #06494b ;
   border: none;
   float: left;
+  text-transform: uppercase;
 }
 
 .carddesign{
-  border-radius: 0 !important;
+  border-radius: 0rem 0rem 2rem 0rem ;
   border: none;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
+ 
 
+}
+
+.containerdesign{
+  padding: 0;
+}
+
+.cardimg{
+ align-items: left;
+ object-fit: cover;
 }
 
 .postBox{
   background-color: white;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  border-radius: 0rem 2rem  ;
 }
 
 h3{
@@ -73,6 +89,14 @@ p {
 }
 .images{
   background-image: cover !important;
+}
+
+.imageRow{
+  width: 100%;
+  min-height: 500px;
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover;
 }
 
 .details {
@@ -110,7 +134,7 @@ font-size: 0.6rem;
 }
 
 .navBG{
-  background-color:#2d6466;
+  background-color:#06494b;
 }
 
 .linkcard {
