@@ -1,11 +1,8 @@
-
-import React from 'react'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Image from 'react-bootstrap/Image'
-import {Row} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-
+import React from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
+import { Link } from "react-router-dom";
 
 /*Get the whished date format DD-MM-YYYY*/
 const getDateFormat = (articleDate) => {
@@ -14,34 +11,33 @@ const getDateFormat = (articleDate) => {
   return newDateFormat;
 };
 
-
-
-function SmallCard ({post}) {
-// console.log(post)
-  
-
+function SmallCard({ post }) {
   return (
+    <>
+      <Card className="carddesign">
+        <Image
+          style={{ height: "10rem", resizeMode: "resize" }}
+          className="image"
+          src={post.fields.picture.fields.file.url}
+        />
+        <Card.Body style={{ height: "5rem" }}>
+          <Card.Title>
+            <h4>{post.fields.title}</h4>
+          </Card.Title>
+        </Card.Body>
+        <Card.Footer className="linkcard">
+          <Link to={post.sys.id}>
+            <Button className="btn-card" variant="secondary" size="sm">
+              Read more
+            </Button>
+          </Link>
+        </Card.Footer>
+        <Card.Footer className="linkcard">
+          <small className="info">{getDateFormat(post.fields.date)}</small>
+        </Card.Footer>
+      </Card>
+    </>
+  );
+}
 
-
-<>
-
-
-    <Card className="carddesign" >
-  <Image style={{height:'10rem',  resizeMode:'resize'}} className="image" src={post.fields.picture.fields.file.url} />
-  <Card.Body style={{height:'5rem'}} >
-    <Card.Title><h4>{post.fields.title}</h4></Card.Title>
-   
-  </Card.Body >
-  <Card.Footer className='linkcard'>
-  <Link to={post.sys.id}><Button className="btn-card" variant="secondary" size="sm"  >Read more</Button></Link>
-  </Card.Footer>
-  <Card.Footer className='linkcard'>
-     
-      <small className="info" >{getDateFormat(post.fields.date)}</small>
-    </Card.Footer>
-</Card>
-</>
-  )
-  }
-
-export default SmallCard
+export default SmallCard;
