@@ -1,15 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { ContentfulClientApi } from "contentful";
-import BigCard from "./components/BigCard"
 import NavBar from "./components/NavBar";
 import Post from "./components/Post";
-import SmallCard from "./components/SmallCard";
-import Container from 'react-bootstrap/Container'
-import { CardGroup } from "react-bootstrap";
 import Home from "./components/Home";
 
 
@@ -26,6 +20,7 @@ function App() {
   });
 
   useEffect(() => {
+    //Fetch from Contentful
     client
       .getEntries()
       .then((response) => {
