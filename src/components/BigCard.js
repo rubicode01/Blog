@@ -35,11 +35,11 @@ function BigCard({post}) {
       </Card> */}
 
 
-     
-      <Card className="carddesign" style={{ marginTop:"1rem", marginLeft:"auto" }}>
-      <Row xs={1} md={2} className="g-4" >
-        <Col >
-        <Image className="image" fluid src={post.fields.picture.fields.file.url}
+     <Container className="carddesign containerdesign">
+
+      <Row xs={1} md={2}  >
+        <Col>
+        <Image className="image img-fluid cardimg " fluid src={post.fields.picture.fields.file.url}
         />
         </Col>
         
@@ -52,7 +52,8 @@ function BigCard({post}) {
 
         </Col>
       </Row>
-      </Card>
+
+      </Container>
     </>
   );
 }

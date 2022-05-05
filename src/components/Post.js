@@ -33,24 +33,24 @@ function Post({ posts }) {
       <Container className="postBox">
       
         <Row className="rowdesign">
-          <Col>
-          <h2>{post.fields.title}</h2>
-            <p className="info">{post.fields.author}</p> 
-            <p className="info">{getDateFormat(date)}</p>
-          </Col>
+          <Col><h2>{post.fields.title}</h2></Col>
+          
+          
         </Row>
     
-        <Row >
-          <Col xs={12} md={12}>
-            <Image
+        <Row>
+          <Col >
+            <Image className="img-fluid imageRow"
               align="start"
               src={pictureUrl}
               alt={post.fields.title}
-              rounded
- className="img-fluid"
-              responsive
             />
           </Col>
+          </Row>
+          <Row>
+          <Col>
+          <p className="info">{post.fields.author}</p>
+            <p className="info">{getDateFormat(date)}</p></Col>
         </Row>
         <Row className="rowdesign">
           <Col xs={12} lg={6}>
