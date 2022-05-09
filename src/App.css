@@ -55,7 +55,16 @@ a{
 }
 
 .navBG{
+  display: flex;
   background-color:#06494b;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  justify-content: left;
+}
+
+.logo {
+  margin-left: 7.5rem;
 }
 
 
