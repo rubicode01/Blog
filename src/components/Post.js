@@ -1,4 +1,5 @@
 import React from "react";
+import Comment from "./Comment"
 import { useParams } from "react-router-dom";
 import { Row, Container, Col, Image } from "react-bootstrap";
 
@@ -61,6 +62,14 @@ function Post({ posts }) {
               {sliceContent(content)[1]}
             </p>
           </Col>
+        </Row>
+      </Container>
+      <Container className="postBox">
+        <Row>
+          <Comment />
+        </Row>
+        <Row>
+         <Comment />
         </Row>
       </Container>
     </div>
