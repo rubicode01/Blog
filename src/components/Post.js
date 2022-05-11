@@ -2,12 +2,17 @@ import React from "react";
 import Comment from "./Comment"
 import { useParams } from "react-router-dom";
 import { Row, Container, Col, Image } from "react-bootstrap";
+
+import AddPost from "./AddPost";
+
 import CreateComment from "./CreateComment";
+
 
 function Post({ posts }) {
   const { id } = useParams();
   const post = posts.find((post) => id === post.sys.id);
   const pictureUrl = post.fields.picture.fields.file.url;
+  //console.log(post)
 
   const date = post.fields.date;
 
@@ -34,22 +39,21 @@ function Post({ posts }) {
         <Row className="rowdesign">
           <Col>
             <h2>{post.fields.title}</h2>
+            <p className="info">{post.fields.author}</p>
+            <p className="info">{getDateFormat(date)}</p>
           </Col>
         </Row>
+
         <Row>
-          <Col>
+          <Col xs={12} md={12}>
             <Image
-              className="img-fluid imageRow"
               align="start"
               src={pictureUrl}
               alt={post.fields.title}
+              rounded
+              className="img-fluid"
+              responsive
             />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <p className="info">{post.fields.author}</p>
-            <p className="info">{getDateFormat(date)}</p>
           </Col>
         </Row>
         <Row className="rowdesign">
@@ -79,6 +83,7 @@ function Post({ posts }) {
          <CreateComment />
         </Row>
       </Container>
+
     </div>
   );
 }
