@@ -18,6 +18,8 @@ h2{
   font-size:xx-large;
   text-transform: uppercase;
   color:rgb(40, 40, 40);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 h3{
