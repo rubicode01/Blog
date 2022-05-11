@@ -64,7 +64,10 @@ function Post({ posts }) {
           </Col>
         </Row>
       </Container>
-      <Container className="postBox">
+      <Container className="postBox comment-container">
+        <Row className="comments-heading">
+          <h3 className="comments-heading-text">Comments</h3>
+        </Row>
         <Row>
           <Comment />
         </Row>
