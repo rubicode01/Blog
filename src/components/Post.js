@@ -2,6 +2,7 @@ import React from "react";
 import Comment from "./Comment"
 import { useParams } from "react-router-dom";
 import { Row, Container, Col, Image } from "react-bootstrap";
+import CreateComment from "./CreateComment";
 
 function Post({ posts }) {
   const { id } = useParams();
@@ -73,6 +74,9 @@ function Post({ posts }) {
         </Row>
         <Row>
          <Comment />
+        </Row>
+        <Row>
+         <CreateComment />
         </Row>
       </Container>
     </div>
