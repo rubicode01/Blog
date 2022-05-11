@@ -149,7 +149,7 @@ a{
 .comments-heading {
   padding-top: 2rem;
   text-align: left;
-  width: 80%;
+  width: 95%;
   margin: auto;
 
 }
@@ -187,6 +187,10 @@ a{
   width: 95%;
   margin: auto;
   margin-top: 5rem;
+}
+
+.comment-form-title {
+  margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 1000px) {
