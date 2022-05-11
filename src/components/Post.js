@@ -1,6 +1,8 @@
 import React from "react";
+import Comment from "./Comment"
 import { useParams } from "react-router-dom";
 import { Row, Container, Col, Image } from "react-bootstrap";
+import CreateComment from "./CreateComment";
 
 function Post({ posts }) {
   const { id } = useParams();
@@ -61,6 +63,20 @@ function Post({ posts }) {
               {sliceContent(content)[1]}
             </p>
           </Col>
+        </Row>
+      </Container>
+      <Container className="postBox comment-container">
+        <Row className="comments-heading">
+          <h3>Comments</h3>
+        </Row>
+        <Row>
+          <Comment />
+        </Row>
+        <Row>
+         <Comment />
+        </Row>
+        <Row>
+         <CreateComment />
         </Row>
       </Container>
     </div>
