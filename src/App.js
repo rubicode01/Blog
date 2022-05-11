@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Post from "./components/Post";
 import Home from "./components/Home";
+import Authors from "./components/Authors";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home posts={posts}/>}/>
         <Route path="/:id" element={<Post posts={posts}/>}></Route>
+        <Route path="/authors" element={<Authors posts={posts}/>}></Route>
       </Routes>
     </div>
   );
