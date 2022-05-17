@@ -20,7 +20,7 @@ function Home({ posts }) {
           <Row xs={1} s={2} md={3} style={{ justifyContent: "space-between" }}>
             {smallPosts.map((post) => (
               <Col>
-              <SmallCard key={post.sys.id} post={post}/>
+              <SmallCard key={post.id} post={post}/>
               </Col>
             ))}
           </Row>

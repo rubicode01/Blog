@@ -20,7 +20,7 @@ function Authors ({ posts }) {
 
 <div>
 <img src="./author.png" alt='author' className="rounded-circle mb-3" style={{width:"150px"}}/>
-  <strong><p>{post.fields.author}</p></strong>
+  <strong><p>{post.author_id}</p></strong>
   <p >Author </p></div>
        
  ))}

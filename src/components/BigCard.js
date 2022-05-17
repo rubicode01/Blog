@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function BigCard({ post }) {
   //Create preview text
   const previewLength = 35;
-  const text = post.fields.content.split(" ");
+  const text = post.content.split(" ");
   let previewText = "";
   for (let i = 0; i < previewLength; i++) {
     previewText = previewText + " " + text[i];
@@ -19,15 +19,15 @@ function BigCard({ post }) {
             <Image
               className="image img-fluid cardimg "
               fluid
-              src={post.fields.picture.fields.file.url}
+              src={post.url}
             />
           </Col>
 
           <Col className="big-card-body">
-            <h3>{post.fields.title}</h3>
+            <h3>{post.title}</h3>
 
             <p className="text">{previewText}</p>
-            <Link to={post.sys.id}>
+            <Link to={post.id}>
               <Button variant="secondary" className="btn-card btn-big-card" size="sm">
                 Read more
               </Button>
