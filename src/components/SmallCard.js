@@ -26,11 +26,11 @@ function SmallCard({ post }) {
           </Card.Title>
         </Card.Body>
         <Card.Footer className="linkcard">
-          <Link to={post.id}>
+          <Link to={`${post.id}`}>
             <Button className="btn-card" variant="secondary" size="sm">
               Read more
             </Button>
-          </Link>
+  </Link>
         </Card.Footer>
         <Card.Footer className="linkcard">
           <small className="info">{getDateFormat(post.date)}</small>

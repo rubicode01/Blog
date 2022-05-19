@@ -6,7 +6,8 @@ import CreateComment from "./CreateComment";
 
 function Post({ posts }) {
   const { id } = useParams();
-  const post = posts.find((post) => id === post.id);
+  const post = posts.find((post) => id == post.id);
+  console.log(post);
   const pictureUrl = post.url;
 
   const date = post.date;

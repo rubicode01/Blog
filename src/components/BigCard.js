@@ -3,6 +3,7 @@ import { Image, Button, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function BigCard({ post }) {
+  console.log(post.id)
   //Create preview text
   const previewLength = 35;
   const text = post.content.split(" ");
@@ -27,11 +28,11 @@ function BigCard({ post }) {
             <h3>{post.title}</h3>
 
             <p className="text">{previewText}</p>
-            <Link to={post.id}>
+            <Link to={`${post.id}`}>
               <Button variant="secondary" className="btn-card btn-big-card" size="sm">
                 Read more
               </Button>
-            </Link>
+  </Link>
           </Col>
         </Row>
       </Container>
