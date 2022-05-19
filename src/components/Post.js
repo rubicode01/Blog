@@ -39,14 +39,15 @@ function Post({ posts }) {
         <Row className="rowdesign">
           <Col>
             <h2>{post.title}</h2>
-            <p className="info">{post.fields.author}</p>
-            <p className="info">{getDateFormat(date)}</p>
+            {/* <p className="info">{post.fields.author}</p>
+            <p className="info">{getDateFormat(date)}</p> */}
           </Col>
         </Row>
 
         <Row>
           <Col xs={12} md={12}>
             <Image
+              className="img-fluid imageRow"
               align="start"
               src={pictureUrl}
               alt={post.title}
