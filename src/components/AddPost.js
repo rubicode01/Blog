@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Form, Row, Col, Button } from "react-bootstrap";
+import { Form, Row, Col, Button, Container } from "react-bootstrap";
 
 const AddPost = () => {
   const [validated, setValidated] = useState(false);
@@ -18,8 +18,9 @@ const AddPost = () => {
   return (
     <>
       <h2>Add Your own Article</h2>
+      <Container className="carddesign containerdesign">
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Row className="mb-3 justify-content-center">
+        <Row className="mb-3 mx-5 justify-content-start">
           <Form.Group as={Col} md="4" controlId="validationCustom01">
             <Form.Label>First name</Form.Label>
             <Form.Control
@@ -41,8 +42,8 @@ const AddPost = () => {
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
         </Row>
-        <Row className="mb-3 justify-content-center">
-          <Form.Group as={Col} md="3" controlId="validationCustom01">
+        <Row className="mb-3 mx-5 justify-content-start">
+          <Form.Group as={Col} md="4" controlId="validationCustom01">
             <Form.Label>Title</Form.Label>
             <Form.Control
               required
@@ -52,7 +53,7 @@ const AddPost = () => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustom02">
+          <Form.Group as={Col} md="4" controlId="validationCustom02">
             <Form.Label>Picture - URL</Form.Label>
             <Form.Control
               required
@@ -62,7 +63,7 @@ const AddPost = () => {
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </Form.Group>
-          <Form.Group as={Col} md="3" controlId="validationCustom02">
+          <Form.Group as={Col} md="4" controlId="validationCustom02">
             <Form.Label>Picture - Description</Form.Label>
             <Form.Control
               required
@@ -105,6 +106,7 @@ const AddPost = () => {
           </Col>
         </Row>
       </Form>
+      </Container>
     </>
   );
 };
