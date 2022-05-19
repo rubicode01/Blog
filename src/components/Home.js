@@ -7,6 +7,7 @@ function Home({ posts }) {
   //get newest Post(for BigCard) and remove it from posts
   const smallPosts = [...posts];
   const newPost = smallPosts.shift();
+  console.log(posts)
 
   return (
     <>
@@ -19,8 +20,8 @@ function Home({ posts }) {
           </Row>
           <Row xs={1} s={2} md={3} style={{ justifyContent: "space-between" }}>
             {smallPosts.map((post) => (
-              <Col>
-              <SmallCard key={post.sys.id} post={post}/>
+              <Col key={post.id}>
+              <SmallCard post={post}/>
               </Col>
             ))}
           </Row>

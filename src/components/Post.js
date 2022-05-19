@@ -10,11 +10,11 @@ import CreateComment from "./CreateComment";
 
 function Post({ posts }) {
   const { id } = useParams();
-  const post = posts.find((post) => id === post.sys.id);
-  const pictureUrl = post.fields.picture.fields.file.url;
-  //console.log(post)
+  const post = posts.find((post) => id == post.id);
+  console.log(post);
+  const pictureUrl = post.url;
 
-  const date = post.fields.date;
+  const date = post.date;
 
   /*Get the whished date format DD-MM-YYYY*/
   const getDateFormat = (articleDate) => {
@@ -23,7 +23,7 @@ function Post({ posts }) {
     return newDateFormat;
   };
 
-  const content = post.fields.content;
+  const content = post.content;
   console.log(content);
 
   /*Slice the Content in two parts*/
@@ -38,22 +38,26 @@ function Post({ posts }) {
       <Container className="postBox">
         <Row className="rowdesign">
           <Col>
-            <h2>{post.fields.title}</h2>
-            <p className="info">{post.fields.author}</p>
-            <p className="info">{getDateFormat(date)}</p>
+            <h2>{post.title}</h2>
+            {/* <p className="info">{post.fields.author}</p>
+            <p className="info">{getDateFormat(date)}</p> */}
           </Col>
         </Row>
 
         <Row>
           <Col xs={12} md={12}>
             <Image
+              className="img-fluid imageRow"
               align="start"
               src={pictureUrl}
-              alt={post.fields.title}
-              rounded
-              className="img-fluid"
-              responsive
+              alt={post.title}
             />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <p className="info">{post.author}</p>
+            <p className="info">{getDateFormat(date)}</p>
           </Col>
         </Row>
         <Row className="rowdesign">

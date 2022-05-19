@@ -8,7 +8,7 @@ const NavBar = () => {
 
 <Navbar>
   <Container className="navContainer" >
-    <Navbar.Brand href="/">
+    <Navbar.Brand>
       <Link to="/">
               {" "}
               <img

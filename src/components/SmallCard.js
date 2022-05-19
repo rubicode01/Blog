@@ -18,22 +18,22 @@ function SmallCard({ post }) {
         <Image
           style={{ height: "10rem", resizeMode: "resize" }}
           className="image"
-          src={post.fields.picture.fields.file.url}
+          src={post.url}
         />
         <Card.Body style={{ height: "5rem" }}>
           <Card.Title>
-            <h4>{post.fields.title}</h4>
+            <h4>{post.title}</h4>
           </Card.Title>
         </Card.Body>
         <Card.Footer className="linkcard">
-          <Link to={post.sys.id}>
+          <Link to={`${post.id}`}>
             <Button className="btn-card" variant="secondary" size="sm">
               Read more
             </Button>
-          </Link>
+  </Link>
         </Card.Footer>
         <Card.Footer className="linkcard">
-          <small className="info">{getDateFormat(post.fields.date)}</small>
+          <small className="info">{getDateFormat(post.date)}</small>
         </Card.Footer>
       </Card>
     </>
