@@ -18,6 +18,7 @@ const AddPost = () => {
   return (
     <>
       <h2>Add Your own Article</h2>
+
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3 justify-content-center">
           <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -80,14 +81,17 @@ const AddPost = () => {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Enter your Text here</Form.Label>
-              <Form.Control 
-              as="textarea" rows={10} 
-              required
-              type="text"
-              placeholder="Enter text article"
-              defaultValue=""
+              <Form.Control
+                as="textarea"
+                rows={10}
+                required
+                type="text"
+                placeholder="Enter text article"
+                defaultValue=""
               />
-              <Form.Control.Feedback isInvalid>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback isInvalid>
+                Looks good!
+              </Form.Control.Feedback>
             </Form.Group>
           </Col>
         </Row>
