@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Comment from "./Comment"
 import { useParams } from "react-router-dom";
 import { Row, Container, Col, Image } from "react-bootstrap";
-
-import AddPost from "./AddPost";
-
 import CreateComment from "./CreateComment";
+import axios from "axios";
 
 
-function Post({ posts }) {
+function Post() {
   const { id } = useParams();
-  const post = posts.find((post) => id == post.id);
-  console.log(post);
-  const pictureUrl = post.url;
+  const [singlePost, setSinglePost] = useState();
 
-  const date = post.date;
+  useEffect(() => {
+    //Fetch from blog backend
+    axios
+      .get(`http://localhost:5000/api/posts/${id}`)
+      .then((response) => setSinglePost(response.data))
+      .catch(console.error);
+
+  }, []);
 
   /*Get the whished date format DD-MM-YYYY*/
   const getDateFormat = (articleDate) => {
@@ -22,9 +25,6 @@ function Post({ posts }) {
     const newDateFormat = myDateArray.split("-").reverse().join("-");
     return newDateFormat;
   };
-
-  const content = post.content;
-  console.log(content);
 
   /*Slice the Content in two parts*/
   const sliceContent = (content) => {
@@ -35,12 +35,13 @@ function Post({ posts }) {
 
   return (
     <div>
-      <Container className="postBox">
+      {singlePost ? 
+      <>
+        {console.log(singlePost)}
+        <Container className="postBox">
         <Row className="rowdesign">
           <Col>
-            <h2>{post.title}</h2>
-            {/* <p className="info">{post.fields.author}</p>
-            <p className="info">{getDateFormat(date)}</p> */}
+            <h2>{singlePost.post.title}</h2>
           </Col>
         </Row>
 
@@ -49,26 +50,26 @@ function Post({ posts }) {
             <Image
               className="img-fluid imageRow"
               align="start"
-              src={pictureUrl}
-              alt={post.title}
+              src={singlePost.post.url}
+              alt={singlePost.post.description}
             />
           </Col>
         </Row>
         <Row>
           <Col>
-            <p className="info">{post.author}</p>
-            <p className="info">{getDateFormat(date)}</p>
+            <p className="info">{singlePost.post.first_name + " " + singlePost.post.last_name}</p>
+            <p className="info">{getDateFormat(singlePost.post.date)}</p>
           </Col>
         </Row>
         <Row className="rowdesign">
           <Col xs={12} lg={6}>
             <p className="text" style={{ textAlign: "justify" }}>
-              {sliceContent(content)[0]}
+              {sliceContent(singlePost.post.content)[0]}
             </p>
           </Col>
           <Col>
             <p className="text" style={{ textAlign: "justify" }}>
-              {sliceContent(content)[1]}
+              {sliceContent(singlePost.post.content)[1]}
             </p>
           </Col>
         </Row>
@@ -87,6 +88,10 @@ function Post({ posts }) {
          <CreateComment />
         </Row>
       </Container>
+      </>
+
+      : <h1>Loading</h1>}
+
 
     </div>
   );
