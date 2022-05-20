@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     //Fetch from blog backend
     axios
-      .get("http://localhost:5000/api/posts")
+      .get("http://localhost:5200/api/posts")
       .then((response) => setPosts(response.data.posts))
       .catch(console.error);
     //Fetch from Contentful
@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      
+
       <Routes>
         <Route path="/" element={<Home posts={posts} />} />
         <Route path="/:id" element={<Post posts={posts} />}></Route>
