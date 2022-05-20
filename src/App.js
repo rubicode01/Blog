@@ -7,7 +7,7 @@ import Post from "./components/Post";
 import Home from "./components/Home";
 import Authors from "./components/Authors";
 import axios from "axios";
-import BigCard from "./components/BigCard";
+import AddPost from "./components/AddPost";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -45,6 +45,7 @@ function App() {
         <Route path="/" element={<Home posts={posts} />} />
         <Route path="/:id" element={<Post posts={posts} />}></Route>
         <Route path="/authors" element={<Authors posts={posts} />}></Route>
+        <Route path="/newPost" element={<AddPost />}></Route>
       </Routes>
     </div>
   );
