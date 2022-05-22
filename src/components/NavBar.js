@@ -24,7 +24,7 @@ const NavBar = () => {
       <Navbar.Text>
       
       <Link to="/authors" ><Button  className="btn_navBar" variant="light"  size="sm">Authors</Button></Link>
-        <Link  to="/" ><Button className="btn_navBar" variant="light"  size="sm">Create post</Button></Link>
+        <Link  to="/newPost" ><Button className="btn_navBar" variant="light"  size="sm">Create post</Button></Link>
       </Navbar.Text>
     </Navbar.Collapse>
   </Container>

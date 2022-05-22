@@ -7,7 +7,7 @@ import Post from "./components/Post";
 import Home from "./components/Home";
 import Authors from "./components/Authors";
 import axios from "axios";
-import BigCard from "./components/BigCard";
+import AddPost from "./components/AddPost";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     //Fetch from blog backend
     axios
-      .get("http://localhost:5000/api/posts")
+      .get("http://localhost:5200/api/posts")
       .then((response) => setPosts(response.data.posts))
       .catch(console.error);
     //Fetch from Contentful
@@ -40,11 +40,12 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      
+
       <Routes>
         <Route path="/" element={<Home posts={posts} />} />
         <Route path="/:id" element={<Post posts={posts} />}></Route>
         <Route path="/authors" element={<Authors posts={posts} />}></Route>
+        <Route path="/newPost" element={<AddPost />}></Route>
       </Routes>
     </div>
   );
