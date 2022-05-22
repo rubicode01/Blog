@@ -1,7 +1,10 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 function CreateComment() {
+  const { id } = useParams();
   const [values, setValues] = useState({
     name: "",
     comment: "",
@@ -10,7 +13,13 @@ function CreateComment() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setValues({ "name": e.target.name.value, "comment": e.target.comment.value})
-    console.log(values);
+    axios.post(`http://localhost:5000/api/posts/${id}/comments`, {
+      name: e.target.name.value,
+      comment: e.target.comment.value
+    })
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+    window.location.reload(false);
   }
 
   return (

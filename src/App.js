@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     //Fetch from blog backend
     axios
-      .get("http://localhost:5200/api/posts")
+      .get("http://localhost:5000/api/posts")
       .then((response) => setPosts(response.data.posts))
       .catch(console.error);
     //Fetch from Contentful
