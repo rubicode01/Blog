@@ -32,6 +32,15 @@ function Post() {
     return [firstPartOfContent, secondPartOfContent];
   };
 
+  const handleLike = (e) => {
+    axios
+    .put(`${api}/api/posts/${id}/likes`)
+    .then((response) => console.log(response))
+    .catch(console.error);
+
+    e.target.disabled = true;
+  }
+
   return (
     <div>
       {singlePost ? (
@@ -73,6 +82,10 @@ function Post() {
                   {sliceContent(singlePost.post.content)[1]}
                 </p>
               </Col>
+            </Row>
+            <Row className="likes">
+              <Col>Likes: {singlePost.post.likes}</Col>
+              <Col><button onClick={handleLike} className="like-button">I Like</button></Col>
             </Row>
           </Container>
           <Container className="postBox comment-container">
