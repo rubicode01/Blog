@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 
 function Authors() {
   const [authors, setAuthors] = useState([]);
+  const api = process.env.REACT_APP_API;
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/authors")
+    fetch(`${api}/api/authors`)
       .then((res) => res.json())
       .then((data) => {
         setAuthors(data);

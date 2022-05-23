@@ -4,6 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
 function CreateComment() {
+  const api = process.env.REACT_APP_API;
   const { id } = useParams();
   const [values, setValues] = useState({
     name: "",
@@ -11,15 +12,20 @@ function CreateComment() {
   })
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setValues({ "name": e.target.name.value, "comment": e.target.comment.value})
-    axios.post(`http://localhost:5000/api/posts/${id}/comments`, {
-      name: e.target.name.value,
-      comment: e.target.comment.value
+    setValues({ 
+      name: e.target.name.value, 
+      comment: e.target.comment.value});
+    console.log(values);
+    console.log(e.target.name.value);
+    axios.post(`${api}/api/posts/${id}/comments`, {
+      name: e.target.name.value, 
+      comment: e.target.comment.value 
+    }, {
+      headers: { "Content-Type": "application/json" },
     })
     .then((res) => console.log(res))
-    .catch((err) => console.log(err))
-    window.location.reload(false);
+    .catch((err) => console.log(err));
+    //window.location.reload(false);
   }
 
   return (

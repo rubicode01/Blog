@@ -6,6 +6,7 @@ import axios from "axios";
 const AddPost = () => {
   const [validated, setValidated] = useState(false);
   const [post, setPost] = useState(null);
+  const api = process.env.REACT_APP_API;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,7 +40,7 @@ const AddPost = () => {
     if (post) {
       console.log(post);
       axios
-        .post("http://localhost:5000/api/posts", post, {
+        .post(`${api}/api/posts`, post, {
           headers: { "Content-Type": "application/json" },
         })
         .then((response) => {

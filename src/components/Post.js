@@ -8,11 +8,12 @@ import axios from "axios";
 function Post() {
   const { id } = useParams();
   const [singlePost, setSinglePost] = useState();
+  const api = process.env.REACT_APP_API;
 
   useEffect(() => {
     //Fetch from blog backend
     axios
-      .get(`http://localhost:5000/api/posts/${id}`)
+      .get(`${api}/api/posts/${id}`)
       .then((response) => setSinglePost(response.data))
       .catch(console.error);
   }, []);
