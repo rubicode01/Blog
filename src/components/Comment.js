@@ -1,14 +1,21 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
-function Comment() {
+function Comment({ comment }) {
+  /*Get the whished date format DD-MM-YYYY*/
+  const getDateFormat = (articleDate) => {
+    const myDateArray = articleDate.slice(0, 10);
+    const newDateFormat = myDateArray.split("-").reverse().join("-");
+    return newDateFormat;
+  };
+
   return (
-    <div className='comment'>
-      <p className='text comment-date'>01.01.1999</p>
-      <p className='text comment-author'>Pa Ul</p>
-      <p className='text'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <div className="comment">
+      <p className="text comment-date">{getDateFormat(comment.date)}</p>
+      <p className="text comment-author">{comment.name}</p>
+      <p className="text">{comment.comment}</p>
     </div>
-  )
+  );
 }
 
-export default Comment
+export default Comment;

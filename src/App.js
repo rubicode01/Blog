@@ -11,6 +11,7 @@ import AddPost from "./components/AddPost";
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const api = process.env.REACT_APP_API;
 
   /*//Contentful
   const contentful = require("contentful");
@@ -24,7 +25,7 @@ function App() {
   useEffect(() => {
     //Fetch from blog backend
     axios
-      .get("http://localhost:5200/api/posts")
+      .get(`${api}/api/posts`)
       .then((response) => setPosts(response.data.posts))
       .catch(console.error);
     //Fetch from Contentful
